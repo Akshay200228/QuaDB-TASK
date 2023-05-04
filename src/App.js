@@ -1,46 +1,24 @@
-// import React, { useState, useEffect } from "react";
-// import { Link } from "react-router-dom";
-
-// function App() {
-//   const [shows, setShows] = useState([]);
-
-//   useEffect(() => {
-//     fetch("https://api.tvmaze.com/search/shows?q=all")
-//       .then((response) => response.json())
-//       .then((data) => setShows(data));
-//   }, []);
-
-//   return (
-//     <div>
-//       <h1>TV Shows</h1>
-//       <ul>
-//         {shows.map((show) => (
-//           <li key={show.show.id}>
-//             <Link to={`/details/${show.show.id}`}>
-//               {show.show.name} - {show.show.premiered}
-//             </Link>
-//           </li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// }
-
-// export default App;
-
-
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import MainScreen from './components/MainScreen';
-import SummaryScreen from './components/SummaryScreen';
+import DetailsScreen from './components/DetailsScreen';
 import { Routes, Route } from "react-router-dom";
+import axios from 'axios';
+
 
 
 function App() {
+  const [shows, setShows] = useState([]);
+
+  useEffect(() => {
+    axios.get('https://api.tvmaze.com/search/shows?q=all')
+      .then(response => setShows(response.data))
+      .catch(error => console.log(error));
+  }, []);
   return (
-        <Routes>
-          <Route path="/*" element={<MainScreen/>} ></Route>
-          <Route path="/summary/:id" element={<SummaryScreen/>} ></Route>
-        </Routes>
+    <Routes>
+      <Route exact path="/" element={<MainScreen shows={shows}/>}/>
+      <Route path="/details/:id" element={<DetailsScreen />} ></Route>
+    </Routes>
 
   );
 }

@@ -1,33 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import { Card, CardImg, CardBody, CardTitle } from 'reactstrap';
 
-function MainScreen() {
-  const [shows, setShows] = useState([]);
-
-  useEffect(() => {
-    axios.get('https://api.tvmaze.com/search/shows?q=all')
-      .then(response => setShows(response.data))
-      .catch(error => console.log(error));
-  }, []);
-
+function MainScreen({ shows }) {
   return (
-    <div>
-      <h1>TV Shows</h1>
-      <ul>
+    <div className="container">
+      <h1 className="my-4">TV Shows</h1>
+      <div className="row">
         {shows.map(show => (
-          <li key={show.show.id}>
-            <Link to={`/summary/${show.show.id}`}>
-              {/* {show.show.name} - {show.show.network?.name} */}
-              <img src={show.show.image?.medium} alt={show.show.name} />
-              {show.show.name} - {show.show.network?.name}
-            </Link>
-          </li>
+          <div key={show.show.id} className="col-md-4">
+            <Card className="mb-4">
+              <CardImg top src={show.show.image?.medium} alt={show.show.name} />
+              <CardBody>
+                <CardTitle>{show.show.name}</CardTitle>
+                <Link to={`/details/${show.show.id}`} className="btn btn-primary">View Details</Link>
+              </CardBody>
+            </Card>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
 
 export default MainScreen;
-

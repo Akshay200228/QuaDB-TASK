@@ -19,6 +19,7 @@ img {
     margin-bottom: 40px;
     border-radius: 10px;
 }
+
 .summary {
     font-size: 1.2rem;
     margin-bottom: 2rem;
@@ -27,70 +28,88 @@ img {
     color: #4f5d75;
 }
 
-.form {
-    max-width: 500px;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    padding: 1rem;
+/* show Info */
+
+.col-md-6 {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    animation-name: slideIn;
+    animation-duration: 1s;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 5px;
+    color: #666;
+}
+
+li strong {
+    font-weight: bold;
+    color: #333;
+}
+
+/* CSS for booking tickets button */
+.btn {
+    display: inline-block;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-}
-
-.form-group {
-    margin-bottom: 1rem;
-    padding: 1rem;
-}
-
-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #2b2d42;
-}
-
-input {
-    width: 100%;
-    padding: 0.5rem;
-    font-size: 1.2rem;
-    border-radius: 5px;
-    border: none;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-}
-
-button {
-    display: block;
-    width: 100%;
-    margin-top: 1rem;
-    padding: 0.5rem;
-    font-size: 1.2rem;
-    background-color: #2b2d42;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
     color: #fff;
-    border-radius: 5px;
-    border: none;
+    background-color: #086e36;
+    border: 2px solid #74ebaf;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-button:hover {
-    background-color: #067a33;
+/* Hover effects */
+.btn:hover {
+    color: #086e36;
+    background-color: #fff;
 }
 
-h2 {
-    font-size: 2rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    color: #2b2d42;
-    text-shadow: 1px 1px 1px #fff;
+/* Responsive design */
+@media only screen and (max-width: 768px) {
+    .btn {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
 }
 
-.details-container {
-    animation-name: fadeIn;
-    animation-duration: 2.5s;
-}
+
+/* *************** */
 
 @keyframes fadeIn {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }

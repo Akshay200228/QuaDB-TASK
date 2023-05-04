@@ -3,6 +3,7 @@ import MainScreen from './components/MainScreen';
 import DetailsScreen from './components/DetailsScreen';
 import { Routes, Route } from "react-router-dom";
 import axios from 'axios';
+import BookingForm from './components/BookingForm';
 
 
 
@@ -18,6 +19,8 @@ function App() {
     <Routes>
       <Route exact path="/" element={<MainScreen shows={shows}/>}/>
       <Route path="/details/:id" element={<DetailsScreen />} ></Route>
+      <Route path="/book/:id" element={<BookingForm/>} />
+
     </Routes>
 
   );

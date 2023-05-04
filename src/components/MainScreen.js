@@ -17,7 +17,6 @@ function MainScreen({ shows }) {
               </div>
             </div>
           </div>
-
         ))}
       </div>
     </div>

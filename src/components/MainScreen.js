@@ -13,7 +13,7 @@ function MainScreen({ shows }) {
                 <img src={!show.show.image?.medium?"https://cdn.pixabay.com/photo/2015/05/15/05/59/demonstration-767864_960_720.jpg":show.show.image?.medium} alt={show.show.name} />
               <div className="overlay">
                 <h2>{show.show.name}</h2>
-                <Link to={`/details/${show.show.id}`} className="btn btn-primary">View Details</Link>
+                <Link to={`/details/${show.show.id}`} className="mainBtn">View Details</Link>
               </div>
             </div>
           </div>

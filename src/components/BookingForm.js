@@ -28,7 +28,7 @@ function BookingForm() {
             name: formData.name,
             email: formData.email,
             phone: formData.phone,
-            movie: show.name,
+            movie: show?.name,
             seats: formData.seats,
         };
         localStorage.setItem('user', JSON.stringify(user));

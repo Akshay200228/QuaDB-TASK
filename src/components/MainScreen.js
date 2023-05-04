@@ -18,6 +18,8 @@ function MainScreen() {
         {shows.map(show => (
           <li key={show.show.id}>
             <Link to={`/summary/${show.show.id}`}>
+              {/* {show.show.name} - {show.show.network?.name} */}
+              <img src={show.show.image?.medium} alt={show.show.name} />
               {show.show.name} - {show.show.network?.name}
             </Link>
           </li>
@@ -28,3 +30,4 @@ function MainScreen() {
 }
 
 export default MainScreen;
+

@@ -30,25 +30,17 @@
 
 
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainScreen from './components/MainScreen';
 import SummaryScreen from './components/SummaryScreen';
+import { Routes, Route } from "react-router-dom";
+
 
 function App() {
   return (
-    // <Routes>
-    //   <div>
-    //     <Route exact path="/" element={<MainScreen/>} />
-    //     <Route exact path="/summary/:id" element={<SummaryScreen/>} />
-    //   </div>
-    // </Routes>
-
-    <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<MainScreen/>} />
-          <Route exact path="/summary/:id" element={<SummaryScreen/>} />
+          <Route path="/*" element={<MainScreen/>} ></Route>
+          <Route path="/summary/:id" element={<SummaryScreen/>} ></Route>
         </Routes>
-    </BrowserRouter>
 
   );
 }

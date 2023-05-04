@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
-import '../styles/DetailsScreen.css';
+import './DetailsScreen.css';
 
 
 function DetailsScreen() {
@@ -34,9 +34,9 @@ function DetailsScreen() {
                     <li><strong>Network: </strong>{show.network ? show.network.name : 'N/A'}</li>
                 </ul>
             </div>
-            {/* <p>{show.summary}</p> */}
+
             <h2>Book Tickets Here</h2>
-                <Link to={`/book/${id}`} className="btn">Book Ticket</Link>
+            <Link to={`/book/${id}`} className="btn">Book Ticket</Link>
         </div>
     );
 }

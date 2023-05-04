@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
-import '../styles/BookingForm.css';
+import './BookingForm.css';
 
 
 function BookingForm() {
     const [show] = useState(null);
     const [formData, setFormData] = useState(() => {
         const storedData = localStorage.getItem('user');
-        console.log(storedData)
         return storedData ? JSON.parse(storedData) : {
-          name: '',
-          email: '',
-          phone: '',
-          seats: 1,
+            name: '',
+            email: '',
+            phone: '',
+            seats: 1,
         };
-      });
+    });
 
     // Handle Input values
     const handleInputChange = (event) => {

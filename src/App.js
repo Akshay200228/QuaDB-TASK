@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import MainScreen from './components/MainScreen';
-import DetailsScreen from './components/DetailsScreen';
+import MainScreen from './components/MainScreen/MainScreen';
+import DetailsScreen from './components/Details/DetailsScreen';
 import { Routes, Route } from "react-router-dom";
 import axios from 'axios';
-import BookingForm from './components/BookingForm';
+import BookingForm from './components/BookingForm/BookingForm';
 
 
 

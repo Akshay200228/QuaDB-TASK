@@ -22,7 +22,7 @@ function LandingPage() {
   return (
     <div>
       <nav className="navbar">
-        <div className="logo">My Website</div>
+        <div className="logo">QuaDB Task</div>
       </nav>
       <div className="landing-image">
         {imageUrl && <img src={imageUrl} alt="Landing Page Image" />}
